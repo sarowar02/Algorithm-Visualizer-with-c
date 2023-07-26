@@ -1,0 +1,74 @@
+# depslib dependency file v1.0
+1690227581 source:c:\users\user\desktop\algorithm_visualizer\bubblesort.c
+	"algo_visualizer.h"
+
+1690276454 c:\users\user\desktop\algorithm_visualizer\algo_visualizer.h
+	<graphics.h>
+	<stdio.h>
+	<time.h>
+
+1266076214 c:\program files (x86)\codeblocks-ep\sdk\winbgim\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+
+1690276386 source:c:\users\user\desktop\algorithm_visualizer\linearsearch.c
+	"algo_visualizer.h"
+
+1690259410 source:c:\users\user\desktop\algorithm_visualizer\stack.c
+	"algo_visualizer.h"
+
+1690276555 source:c:\users\user\desktop\algorithm_visualizer\binarysearch.c
+	"algo_visualizer.h"
+
+1690279302 source:c:\users\user\desktop\algorithm_visualizer\main.c
+	"algo_visualizer.h"
+	"stack.c"
+	"queue.c"
+
+1690259410 c:\users\user\desktop\algorithm_visualizer\stack.c
+	"algo_visualizer.h"
+
+1690261572 c:\users\user\desktop\algorithm_visualizer\queue.c
+	"algo_visualizer.h"
+
+1690261572 source:c:\users\user\desktop\algorithm_visualizer\queue.c
+	"algo_visualizer.h"
+
+1690247737 c:\users\user\desktop\algorithm_visualizer\source.c
+
+1690247737 source:c:\users\user\desktop\algorithm_visualizer\source.c
+
+1690227582 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\bubblesort.c
+	"algo_visualizer.h"
+
+1690276456 c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\algo_visualizer.h
+	<graphics.h>
+	<stdio.h>
+	<time.h>
+
+1690276388 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\linearsearch.c
+	"algo_visualizer.h"
+
+1690279812 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\main.c
+	"algo_visualizer.h"
+	"stack.c"
+	"queue.c"
+
+1690259412 c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\stack.c
+	"algo_visualizer.h"
+
+1690261574 c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\queue.c
+	"algo_visualizer.h"
+
+1690261574 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\queue.c
+	"algo_visualizer.h"
+
+1690247738 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\source.c
+
+1690259412 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\stack.c
+	"algo_visualizer.h"
+
+1690276556 source:c:\users\user\desktop\algorithm_visualizer\algorithm_visualizer\binarysearch.c
+	"algo_visualizer.h"
+
