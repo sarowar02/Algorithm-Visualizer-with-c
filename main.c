@@ -352,7 +352,7 @@ int main()
         }//LINKED LIST END
 
 
-        if((x>=520 && x<=870) && (y>=330 && y<=480))// GRAPH DATA STRUCTURE-- PRIMS ALGO/KRUSKAL ALGO
+        if((x>=520 && x<=870) && (y>=330 && y<=480))// GRAPH DATA STRUCTURE-- BFS AND DFS
         {
             while(1)
             {
@@ -389,25 +389,24 @@ int main()
 
                 printf("%d %d",x,y);
 
-                if((x>=150 && x<=500) && (y>=180 && y<=280))//PRIMS ALGORITHM
+                if((x>=150 && x<=500) && (y>=180 && y<=280))//DFS
                 {
                     cleardevice();
 
-                    outtextxy(200,150,"Prims algorithm will be available soon");
-                    outtextxy(200,200,"press any key to halt");
+                    dfsvis();
+
                     getch();
 
 
 
 
-                }//PRIMS ALGORITHM END
+                }
 
-                else if((x>=320 && x<=670) && (y>=300 && y<=400))//KRUSKAL ALGORITHM
+                else if((x>=320 && x<=670) && (y>=300 && y<=400))//
                 {
                     cleardevice();
 
-                    outtextxy(200,150,"Kruskal algorithm will be available soon");
-                    outtextxy(200,200,"press any key to halt");
+                    bfsvis();
                     getch();
 
 
@@ -446,7 +445,6 @@ void initQ(struct queue *q)
 }
 void enq(struct queue *q,int val)
 {
-    static int count=0;
     struct Node *new_node=(struct Node *)malloc(sizeof(struct Node));
     new_node->data=val;
     new_node->next=NULL;
