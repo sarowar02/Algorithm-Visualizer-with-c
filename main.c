@@ -6,7 +6,7 @@
 int main()
 {
     //initgraph(&gd,&gm,"");
-    initwindow(980,720,"Algorithtm Visualizer");
+    initwindow(1000,750,"Algorithtm Visualizer");
 
 
 
@@ -156,7 +156,7 @@ int main()
                 floodfill(325,135+y_margin,WHITE);
 
                 rectangle(320,250+y_margin,670,350+y_margin);
-                outtextxy(350,285+y_margin,"Binary Search sort");
+                outtextxy(350,285+y_margin,"Binary Search");
                 setfillstyle(SOLID_FILL,GREEN);
                 floodfill(325,335+y_margin,WHITE);
 
@@ -164,7 +164,7 @@ int main()
                 getmouseclick(WM_LBUTTONDOWN,x,y);
 
 
-                if((x>=150 && x<=500) && (y>=180 && y<=280))//LINEAR SEARCH
+                if((x>=320 && x<=670) && (y>=180 && y<=280))//LINEAR SEARCH
                 {
 
                     int arr[N];
@@ -241,8 +241,6 @@ int main()
 
                 while(!ismouseclick(WM_LBUTTONDOWN));
                 getmouseclick(WM_LBUTTONDOWN,x,y);
-
-                printf("%d %d",x,y);
 
                 if((x>=150 && x<=500) && (y>=180 && y<=280))//STACK DATA STRUCTURE
                 {
@@ -374,12 +372,12 @@ int main()
 
                 settextstyle(SMALL_FONT,HORIZ_DIR,9);
                 rectangle(320,130+y_margin,670,230+y_margin);
-                outtextxy(350,165+y_margin,"Prims Algorithm");
+                outtextxy(350,165+y_margin,"DFS");
                 setfillstyle(SOLID_FILL,GREEN);
                 floodfill(325,135+y_margin,WHITE);
 
                 rectangle(320,250+y_margin,670,350+y_margin);
-                outtextxy(350,285+y_margin,"Kruskal Algorithm");
+                outtextxy(350,285+y_margin,"BFS");
                 setfillstyle(SOLID_FILL,GREEN);
                 floodfill(325,335+y_margin,WHITE);
 
@@ -402,7 +400,7 @@ int main()
 
                 }
 
-                else if((x>=320 && x<=670) && (y>=300 && y<=400))//
+                else if((x>=320 && x<=670) && (y>=300 && y<=400))//BFS
                 {
                     cleardevice();
 
@@ -410,7 +408,7 @@ int main()
                     getch();
 
 
-                }//KRUSKAL ALGORITHM END
+                }//
 
                 else if((x>=50 && x<=170) && (y>=50 && y<=100)) //BACK BUTTON
                 {

@@ -15,7 +15,7 @@ void drawArray(int *arr,int n,int highlight_ind,int color)
 
     for(int i=0;i<n;i++)
     {
-        int x=200+i*(margin+bar_width)+margin;
+        int x=100+i*(margin+bar_width)+margin;
         int bar_height=arr[i]*10;
         int y=y_margin-bar_height;
         rectangle(x,y,x+bar_width,y_margin);
@@ -39,7 +39,7 @@ void drawArray(int *arr,int n,int highlight_ind,int color)
         char str[10];
         sprintf(str,"%d",arr[i]);
         settextstyle(DEFAULT_FONT,HORIZ_DIR,2);
-        outtextxy(x+10,y-20,str);
+        outtextxy(x+4,y-20,str);
     }
 
 }

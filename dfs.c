@@ -80,7 +80,7 @@ void drawGrid()
     }
 
     // Draw the start and end positions.
-    setfillstyle(SOLID_FILL, RGB(0, 176, 80)); // Green
+    setfillstyle(SOLID_FILL, CYAN); //
     bar(start_col * CELL_SIZE + 1, start_row * CELL_SIZE + 1, (start_col + 1) * CELL_SIZE - 1, (start_row + 1) * CELL_SIZE - 1);
     setfillstyle(SOLID_FILL, RGB(237, 28, 36)); // Red
     bar(end_col * CELL_SIZE + 1, end_row * CELL_SIZE + 1, (end_col + 1) * CELL_SIZE - 1, (end_row + 1) * CELL_SIZE - 1);
@@ -100,7 +100,7 @@ void dfs(int row, int col)
     delay(100);
 
     // Draw the visited cell (you can change the color if you like).
-    setfillstyle(SOLID_FILL, GREEN); // Cyan
+    setfillstyle(SOLID_FILL, RGB(0, 162, 232)); // Cyan
     bar(col * CELL_SIZE + 1, row * CELL_SIZE + 1, (col + 1) * CELL_SIZE - 1, (row + 1) * CELL_SIZE - 1);
 
     // Check if the end is reached.

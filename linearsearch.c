@@ -3,11 +3,12 @@ int visit[20];
 void draw_ln_Array(int *arr,int n,int high_ind,int sr)
 {
 
-
+   int margin=20;
 
     for(int i=0;i<n;i++)
     {
-       int x=x_margin+i*(x_margin+box_width);
+
+       int x=margin+i*(5+box_width);
        rectangle(x,400,x+box_width,400+box_height);
 
         if(visit[i])

@@ -46,10 +46,16 @@
 			<Add directory="$(CODEBLOCKS)\sdk\winbgim\lib" />
 		</Linker>
 		<Unit filename="algo_visualizer.h" />
+		<Unit filename="bfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="binarysearch.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="bubblesort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dfs.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="linearsearch.c">

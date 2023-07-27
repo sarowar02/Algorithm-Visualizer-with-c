@@ -6,17 +6,17 @@
 #include<time.h>
 
 #define DELAY 500
-#define N 10
+#define N 15
 #define MAX 50
-#define MIN 40
+#define MIN 0
 #define MAX_STACK_SIZE 5
 #define  box_width 60
 #define box_height 40
 #define x_margin 35
-#define WIDTH 1080 // Change the window width
-#define HEIGHT 720 // Change the window height
-#define MAZE_ROWS 10
-#define MAZE_COLS 13
+#define WIDTH 1000 // Change the window width
+#define HEIGHT 750 // Change the window height
+#define MAZE_ROWS 15
+#define MAZE_COLS 20
 #define CELL_SIZE (WIDTH / MAZE_COLS)
 #define ROWS (HEIGHT / CELL_SIZE)
 #define COLS (WIDTH / CELL_SIZE)
