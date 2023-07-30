@@ -116,6 +116,21 @@ int main()
                     delay(2000);
                     cleardevice();
                 }
+                else if((x>=320 && x<=670) && (y>=300 && y<=400))// SELECTION SORT
+                        {
+                          cleardevice();
+                          outtextxy(200,300,"Selection sort will be available soon..");
+                          outtextxy(200,350,"press any key to halt!");
+
+                        }
+                else if((x>=320 && x<=670) && (y>=420 && y<=520))// INSERTION SORT
+                        {
+                          cleardevice();
+                          outtextxy(200,300,"Insertion sort will be available soon..");
+                          outtextxy(200,350,"press any key to halt!");
+
+                        }
+
                 else if((x>=50 && x<=170) && (y>=50 && y<=100)) //BACK BUTTON
                 {
                     cleardevice();
