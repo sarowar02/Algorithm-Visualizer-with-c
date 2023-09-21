@@ -6,7 +6,7 @@
 #include "algo_visualizer.h"
 struct Node
     {
-        int data;
+        char data;
         struct Node *next;
         struct Node *prev;
     };

@@ -2,15 +2,15 @@
 struct stack
 {
 
-    int stack[MAX_STACK_SIZE ];
+    char stack[MAX_STACK_SIZE ];
     int top;
     int x,y;
     char str[10];
-    void push(int item)
+    void push(char item)
     {
         if (top >= MAX_STACK_SIZE  - 1)
         {
-            printf("Stack Overflow\n");
+            outtextxy(100,400,"Stack Overflow\n");
             return;
         }
         stack[++top] = item;
@@ -19,7 +19,7 @@ struct stack
     {
         if (top < 0)
         {
-            printf("Stack Underflow\n");
+            outtextxy(100,400,"Stack Underflow\n");
             return -1;
         }
         return stack[top--];
@@ -31,7 +31,7 @@ struct stack
         {
             int bottom=200+ MAX_STACK_SIZE*box_height;
 
-            sprintf(str, "%d", stack[i]);
+            sprintf(str, "%c", stack[i]);
             outtextxy(590, bottom +5- (i+1) * 40, str);
             line(500,bottom - (i+1) * box_height,700,bottom - (i+1) * box_height);
             setfillstyle(SOLID_FILL,GREEN);

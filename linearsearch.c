@@ -19,6 +19,10 @@ void draw_ln_Array(int *arr,int n,int high_ind,int sr)
         }
         else if(i==high_ind)
         {
+            outtextxy(250,300,"value not matched in index: ");
+            char str[10];
+            sprintf(str,"%d",i);
+            outtextxy(650,300,str);
 
             setfillstyle(SOLID_FILL,RED);
             floodfill(x+2,402,WHITE);
@@ -53,17 +57,18 @@ void linear_search(int *arr,int n,int high_ind)
              char ind[10];
              sprintf(ind,"%d",i);
 
-             outtextxy(250,280,"Value found at index ");
-             outtextxy(550,280,ind);
-             getch();
+             outtextxy(250,350,"Value found at index ");
+             outtextxy(550,350,ind);
              return;
 
             }
-            else draw_ln_Array(arr,n,i,sr);
+            else {
+
+                draw_ln_Array(arr,n,i,sr);
+
+            }
 
 
     }
-    outtextxy(250,280,"Value  not found ");
-    getch();
-
+    outtextxy(250,350,"Value  not found ");
 }

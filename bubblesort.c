@@ -1,11 +1,6 @@
 #include "algo_visualizer.h"
 
 int visited[20];
-int random_int(int min,int max)
-{
-    return rand()%(max-min+1)+min;
-
-}
 void drawArray(int *arr,int n,int highlight_ind,int color)
 {
 
@@ -45,7 +40,8 @@ void drawArray(int *arr,int n,int highlight_ind,int color)
 }
 void bubble_sort(int *arr,int n)
 {
-    int done=n;
+    int done=n,swaped=0;
+    char str[10];
 
     for(int i=0;i<n-1;i++)
     {
@@ -54,11 +50,12 @@ void bubble_sort(int *arr,int n)
         for(int j=0;j<n-i-1;j++)
         {
             cleardevice();
-            //settextstyle(2,HORIZ_DIR,100);
-            //setcolor(BLACK);
             settextstyle(DEFAULT_FONT,HORIZ_DIR,4);
-            outtextxy(100,100,"Bubble sort visulization.");
-            outtextxy(100,130,"press any key to exit");
+            //setcolor(BLACK);
+            outtextxy(100,100,"Bubble Sort Visulization");
+            outtextxy(300,200,"Swaped: ");
+            sprintf(str,"%d",swaped);
+            outtextxy(500,200,str);
             if(kbhit())
             {
                 eflag=1;
@@ -67,12 +64,15 @@ void bubble_sort(int *arr,int n)
             drawArray(arr,n,j,RED);
             if(arr[j]>arr[j+1])
             {
+                outtextxy(100,150,"arr[j]>arr[j+1]");
+                swaped++;
                 flag=1;
                 int temp=arr[j];
                 arr[j]=arr[j+1];
                 arr[j+1]=temp;
             }
-            delay(DELAY);
+            else outtextxy(100,150,"arr[j]<arr[j+1]");
+            delay(500);
         }
         if(eflag) break;
         visited[--done]=1;

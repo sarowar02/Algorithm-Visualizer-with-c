@@ -75,7 +75,7 @@
 1690447833 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\bubblesort.c
 	"algo_visualizer.h"
 
-1690480206 c:\users\user\desktop\c projects\algorithm-visualizer-with-c\algo_visualizer.h
+1691830436 c:\users\user\desktop\c projects\algorithm-visualizer-with-c\algo_visualizer.h
 	<graphics.h>
 	<stdio.h>
 	<time.h>
@@ -83,7 +83,7 @@
 1690480523 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\linearsearch.c
 	"algo_visualizer.h"
 
-1690480679 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\main.c
+1691830436 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\main.c
 	"algo_visualizer.h"
 	"stack.c"
 	"queue.c"
@@ -102,15 +102,74 @@
 1690347091 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\stack.c
 	"algo_visualizer.h"
 
-1690347091 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\binarysearch.c
+1691769826 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\binarysearch.c
 	"algo_visualizer.h"
 
-1690447309 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\dfs.c
+1691821447 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\dfs.c
 	"algo_visualizer.h"
 
 1690390248 c:\users\user\desktop\c projects\algorithm-visualizer-with-c\dfs.c
 	"algo_visualizer.h"
 
 1690447635 source:c:\users\user\desktop\c projects\algorithm-visualizer-with-c\bfs.c
+	"algo_visualizer.h"
+
+1689745882 c:\users\user\desktop\emni\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+
+1689745882 c:\users\user\desktop\c projects\algorithm-visualizer-with-c\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+
+1693568027 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\bfs.c
+	"algo_visualizer.h"
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+
+1694784373 c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\algo_visualizer.h
+	<graphics.h>
+	<stdio.h>
+	<time.h>
+
+1693567077 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\binarysearch.c
+	"algo_visualizer.h"
+
+1695197322 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\bubblesort.c
+	"algo_visualizer.h"
+
+1694785237 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\linearsearch.c
+	"algo_visualizer.h"
+
+1694784672 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\main.c
+	"algo_visualizer.h"
+	"stack.c"
+	"queue.c"
+
+1694584433 c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\stack.c
+	"algo_visualizer.h"
+
+1694784300 c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\queue.c
+	"algo_visualizer.h"
+
+1694784300 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\queue.c
+	"algo_visualizer.h"
+
+1690347091 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\source.c
+
+1694584433 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\stack.c
+	"algo_visualizer.h"
+
+1695198589 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\dfs.c
+	"algo_visualizer.h"
+	<stdbool.h>
+
+1694585790 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\string.c
+	"algo_visualizer.h"
+
+1694783900 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\selection_sort.c
 	"algo_visualizer.h"
 

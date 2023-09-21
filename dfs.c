@@ -1,118 +1,93 @@
 #include "algo_visualizer.h"
-int grid[MAZE_ROWS][MAZE_COLS];
-int start_row, start_col;
-int end_row, end_col;
-int reached_end = 0;
-void dfsvis()
+#include <stdbool.h>
+#define NODE_RADIUS 30
+bool visid[8];
+struct Point nodes[] = {
+        {400, 200},{300,300},{500,300},{250,400},{350,400},{450,400},{550,400}
+    };
+    int numNodes = sizeof(nodes) / sizeof(nodes[0]);
+
+    int edges[][2] = {
+        {0, 2}, {0,1},{1, 3}, {1, 4}, {2, 5}, {2,6}
+    };
+    int numEdges = sizeof(edges) / sizeof(edges[0]);
+void dfsvis(int node)
 {
+    setlinestyle(SOLID_LINE,0,3);
 
-    // Initialize the grid and draw it.
-    initializeGrid();
-    drawGrid();
+    outtextxy(50,500,"Adjacency List: ");
+    outtextxy(200,530,"0 => 1 , 2");
+    outtextxy(200,560,"1 => 0 , 3 , 4");
+    outtextxy(200,590,"2 => 0 , 5 , 6");
+    outtextxy(200,620,"3 => 1");
+    outtextxy(200,650,"4 => 1");
+    outtextxy(200,680,"5 => 2");
+    outtextxy(200,710,"6 => 2");
 
-    // Start the DFS from the upper-left cell.
-    dfs(start_row,start_col);
+
+    drawGraph();
+
+
+
 }
-
-void initializeGrid()
+void drawGraph()
 {
-    // Initialize the grid with 0 (no obstacle).
-    for (int i = 0; i < MAZE_ROWS; i++)
-    {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            grid[i][j] = 0;
-        }
+
+    outtextxy(270,50,"Depth First Search");
+    setcolor(LIGHTBLUE);
+    for (int i = 0; i < numEdges; i++) {
+        int nodeA = edges[i][0];
+        int nodeB = edges[i][1];
+
+        int x1 = nodes[nodeA].x;
+        int y1 = nodes[nodeA].y;
+        int x2 = nodes[nodeB].x;
+        int y2 = nodes[nodeB].y;
+        line(x1, y1, x2, y2);
     }
-
-    // Randomly add obstacles to the grid (1 represents obstacle).
-    // Increase the obstacle density by 15%.
-    int total_obstacles = MAZE_ROWS * MAZE_COLS * 25 / 100;
-    int added_obstacles = 0;
-
-    while (added_obstacles < total_obstacles)
-    {
-        int row = rand() % MAZE_ROWS;
-        int col = rand() % MAZE_COLS;
-
-        if (grid[row][col] == 0)
-        {
-            grid[row][col] = 1;
-            added_obstacles++;
-        }
+  setcolor(WHITE);
+    for (int i = 0; i < numNodes; i++) {
+        circle(nodes[i].x, nodes[i].y, NODE_RADIUS);
+        setfillstyle(SOLID_FILL,BLACK);
+        floodfill(nodes[i].x+2, nodes[i].y+2,WHITE);
+        char str[10];
+        sprintf(str, "%d", i);
+        outtextxy(nodes[i].x - 10, nodes[i].y - 60, str);
     }
+     outtextxy(700,100,"Log Tracer:");
+     delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[0].x+2, nodes[0].y+2,WHITE);
+    outtextxy(700,150,"0");
 
-    // Set the start and end positions.
-    start_row = 0;
-    start_col = 0;
-    end_row = MAZE_ROWS - 1;
-    end_col = MAZE_COLS - 1;
-}
 
-void drawGrid()
-{
-    // Draw cell borders.
-    for (int i = 0; i < MAZE_ROWS; i++)
-    {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            rectangle(j * CELL_SIZE, i * CELL_SIZE, (j + 1) * CELL_SIZE, (i + 1) * CELL_SIZE);
-        }
-    }
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[1].x+2, nodes[1].y+2,WHITE);
+    outtextxy(700,200,"0->1");
 
-    // Fill cells.
-    for (int i = 0; i < MAZE_ROWS; i++)
-    {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            if (grid[i][j] == 0)
-            {
-                // Draw an empty cell.
-                setfillstyle(SOLID_FILL, RGB(230, 230, 230)); // Light Gray
-            }
-            else
-            {
-                // Draw an obstacle cell.
-                setfillstyle(SOLID_FILL, RGB(100, 100, 100)); // Dark Gray
-            }
-            bar(j * CELL_SIZE + 1, i * CELL_SIZE + 1, (j + 1) * CELL_SIZE - 1, (i + 1) * CELL_SIZE - 1);
-        }
-    }
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[3].x+2, nodes[3].y+2,WHITE);
+    outtextxy(700,250,"1->3");
 
-    // Draw the start and end positions.
-    setfillstyle(SOLID_FILL, CYAN); //
-    bar(start_col * CELL_SIZE + 1, start_row * CELL_SIZE + 1, (start_col + 1) * CELL_SIZE - 1, (start_row + 1) * CELL_SIZE - 1);
-    setfillstyle(SOLID_FILL, RGB(237, 28, 36)); // Red
-    bar(end_col * CELL_SIZE + 1, end_row * CELL_SIZE + 1, (end_col + 1) * CELL_SIZE - 1, (end_row + 1) * CELL_SIZE - 1);
-}
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[4].x+2, nodes[4].y+2,WHITE);
+    outtextxy(700,300,"1->4");
 
-void dfs(int row, int col)
-{
-    if (row < 0 || row >= MAZE_ROWS || col < 0 || col >= MAZE_COLS || grid[row][col] != 0 || reached_end)
-    {
-        return;
-    }
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[2].x+2, nodes[2].y+2,WHITE);
+    outtextxy(700,350,"0->2");
 
-    // Mark the current cell as visited (2 represents visited cell).
-    grid[row][col] = 2;
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[5].x+2, nodes[5].y+2,WHITE);
+    outtextxy(700,400,"2->5");
 
-    // Visualization delay (adjust as needed to control the visualization speed).
-    delay(100);
-
-    // Draw the visited cell (you can change the color if you like).
-    setfillstyle(SOLID_FILL, RGB(0, 162, 232)); // Cyan
-    bar(col * CELL_SIZE + 1, row * CELL_SIZE + 1, (col + 1) * CELL_SIZE - 1, (row + 1) * CELL_SIZE - 1);
-
-    // Check if the end is reached.
-    if (row == end_row && col == end_col)
-    {
-        reached_end = 1;
-        return;
-    }
-
-    // Recursive DFS in all four directions.
-    dfs(row - 1, col); // Up
-    dfs(row + 1, col); // Down
-    dfs(row, col - 1); // Left
-    dfs(row, col + 1); // Right
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[6].x+2, nodes[6].y+2,WHITE);
+    outtextxy(700,450,"2->6");
 }

@@ -1,180 +1,101 @@
 #include "algo_visualizer.h"
-typedef struct
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define NODE_RADIUS 30
+
+
+void draw_bfs_Graph(struct Point *nodes,int numNodes,int edges[][2],int numEdges)
 {
-    int row;
-    int col;
-} Cell;
+    outtextxy(270, 50, "Breadth-First Search");
 
-Cell queue[MAZE_ROWS * MAZE_COLS];
-int front = 0, rear = -1;
-
-void enqueue(int row, int col)
-{
-    rear++;
-    queue[rear].row = row;
-    queue[rear].col = col;
-}
-
-Cell dequeue()
-{
-    Cell cell = queue[front];
-    front++;
-    return cell;
-}
-
-int isQueueEmpty()
-{
-    return front > rear;
-}
-
-void bfsvis()
-{
-
-    int grid[MAZE_ROWS][MAZE_COLS];
-int start_row, start_col;
-int end_row, end_col;
-
-    //initializeGrid();
-
-    // Initialize the grid with 0 (no obstacle).
-    for (int i = 0; i < MAZE_ROWS; i++)
+     setcolor(LIGHTBLUE);
+    for (int i = 0; i < numEdges; i++)
     {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            grid[i][j] = 0;
-        }
+        int nodeA = edges[i][0];
+        int nodeB = edges[i][1];
+
+        int x1 = nodes[nodeA].x;
+        int y1 = nodes[nodeA].y;
+        int x2 = nodes[nodeB].x;
+        int y2 = nodes[nodeB].y;s
+
+        line(x1, y1, x2, y2);
     }
-
-    // Randomly add obstacles to the grid (1 represents obstacle).
-    // Increase the obstacle density by 15%.
-    int total_obstacles = MAZE_ROWS * MAZE_COLS * 25 / 100;
-    int added_obstacles = 0;
-
-    while (added_obstacles < total_obstacles)
+     setcolor(WHITE);
+    for (int i = 0; i < numNodes; i++)
     {
-        int row = rand() % MAZE_ROWS;
-        int col = rand() % MAZE_COLS;
+        circle(nodes[i].x, nodes[i].y, NODE_RADIUS);
+        setfillstyle(SOLID_FILL, BLACK);
+        floodfill(nodes[i].x+2, nodes[i].y+2, WHITE);
 
-        if (grid[row][col] == 0)
-        {
-            grid[row][col] = 1;
-            added_obstacles++;
-        }
+        char str[10];
+        sprintf(str, "%d", i);
+        outtextxy(nodes[i].x - 10, nodes[i].y - 60, str);
     }
+    outtextxy(700,100,"Log Tracer:");
 
-    // Set the start and end positions.
-    start_row = 0;
-    start_col = 0;
-    end_row = MAZE_ROWS - 1;
-    end_col = MAZE_COLS - 1;
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[0].x+2, nodes[0].y+2,WHITE);
+    outtextxy(700,150,"0");
 
-    //drawGrid();
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[1].x+2, nodes[1].y+2,WHITE);
+    outtextxy(700,200,"0->1");
 
-    // Draw cell borders.
-    for (int i = 0; i < MAZE_ROWS; i++)
-    {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            rectangle(j * CELL_SIZE, i * CELL_SIZE, (j + 1) * CELL_SIZE, (i + 1) * CELL_SIZE);
-        }
-    }
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[2].x+2, nodes[2].y+2,WHITE);
+    outtextxy(700,250,"0->2");
 
-    // Fill cells.
-    for (int i = 0; i < MAZE_ROWS; i++)
-    {
-        for (int j = 0; j < MAZE_COLS; j++)
-        {
-            if (grid[i][j] == 0)
-            {
-                // Draw an empty cell.
-                setfillstyle(SOLID_FILL, RGB(230, 230, 230)); // Light Gray
-            }
-            else
-            {
-                // Draw an obstacle cell.
-                setfillstyle(SOLID_FILL, RGB(100, 100, 100)); // Dark Gray
-            }
-            bar(j * CELL_SIZE + 1, i * CELL_SIZE + 1, (j + 1) * CELL_SIZE - 1, (i + 1) * CELL_SIZE - 1);
-        }
-    }
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[3].x+2, nodes[3].y+2,WHITE);
+    outtextxy(700,300,"1->3");
 
-    // Draw the start and end positions.
-    setfillstyle(SOLID_FILL, GREEN); // Green
-    bar(start_col * CELL_SIZE + 1, start_row * CELL_SIZE + 1, (start_col + 1) * CELL_SIZE - 1, (start_row + 1) * CELL_SIZE - 1);
-    setfillstyle(SOLID_FILL, RGB(237, 28, 36)); // Red
-    bar(end_col * CELL_SIZE + 1, end_row * CELL_SIZE + 1, (end_col + 1) * CELL_SIZE - 1, (end_row + 1) * CELL_SIZE - 1);
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[4].x+2, nodes[4].y+2,WHITE);
+    outtextxy(700,350,"1->4");
 
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[5].x+2, nodes[5].y+2,WHITE);
+    outtextxy(700,400,"2->5");
 
-    // Initialize visited array and parent arrays.
-    int visited[MAZE_ROWS][MAZE_COLS] = {0};
-
-     int parentRow[MAZE_ROWS][MAZE_COLS];
-int parentCol[MAZE_ROWS][MAZE_COLS];
-    // Start BFS from the start position.
-    visited[start_row][start_col] = 1;
-    enqueue(start_row, start_col);
-
-    int dr[] = {-1, 1, 0, 0};
-    int dc[] = {0, 0, -1, 1};
-
-    while (!isQueueEmpty())
-    {
-        Cell current = dequeue();
-        int row = current.row;
-        int col = current.col;
-
-        // Visualization delay (adjust as needed to control the visualization speed).
-        delay(100);
-
-        // Draw the visited cell (you can change the color if you like).
-        setfillstyle(SOLID_FILL, RGB(0, 162, 232)); // Cyan
-        bar(col * CELL_SIZE + 1, row * CELL_SIZE + 1, (col + 1) * CELL_SIZE - 1, (row + 1) * CELL_SIZE - 1);
-
-        if (row == end_row && col == end_col)
-        {
-            // End position reached, break the loop.
-            break;
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            int newRow = row + dr[i];
-            int newCol = col + dc[i];
-
-            if (newRow >= 0 && newRow < MAZE_ROWS && newCol >= 0 && newCol < MAZE_COLS &&
-                    grid[newRow][newCol] == 0 && !visited[newRow][newCol])
-            {
-                visited[newRow][newCol] = 1;
-                parentRow[newRow][newCol] = row;
-                parentCol[newRow][newCol] = col;
-                enqueue(newRow, newCol);
-            }
-        }
-    }
-
-
-    // Trace back the path from the end position to the start position.
-    int row = end_row;
-    int col = end_col;
-
-    while (row != start_row || col != start_col)
-    {
-        // Visualization delay for highlighting the path.
-        delay(200);
-
-        // Draw the path cell.
-        setfillstyle(SOLID_FILL, RGB(255, 0, 0)); // Red
-        bar(col * CELL_SIZE + 1, row * CELL_SIZE + 1, (col + 1) * CELL_SIZE - 1, (row + 1) * CELL_SIZE - 1);
-
-        // Move to the parent cell.
-        int tempRow = row;
-        row = parentRow[tempRow][col];
-        col = parentCol[tempRow][col];
-    }
-
-
+    delay(1000);
+    setfillstyle(SOLID_FILL,GREEN);
+    floodfill(nodes[6].x+2, nodes[6].y+2,WHITE);
+    outtextxy(700,450,"2->6");
 }
 
 
+void bfsvis(int startNode)
+{
+    struct Point nodes[] =
+    {
+        {400, 200}, {300, 300}, {500, 300}, {250, 400}, {350, 400}, {450, 400}, {550, 400}
+    };
+    int numNodes = sizeof(nodes) / sizeof(nodes[0]);
 
+    int edges[][2] =
+    {
+        {0, 2}, {0, 1}, {1, 3}, {1, 4}, {2, 5}, {2, 6}
+    };
+    int numEdges = sizeof(edges) / sizeof(edges[0]);
+    outtextxy(50,500,"Adjacency List: ");
+    outtextxy(200,530,"0 => 1 , 2");
+    outtextxy(200,560,"1 => 0 , 3 , 4");
+    outtextxy(200,590,"2 => 0 , 5 , 6");
+    outtextxy(200,620,"3 => 1");
+    outtextxy(200,650,"4 => 1");
+    outtextxy(200,680,"5 => 2");
+    outtextxy(200,710,"6 => 2");
+
+    draw_bfs_Graph(nodes,numNodes,edges,numEdges);
+
+}
 
