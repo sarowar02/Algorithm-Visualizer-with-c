@@ -11,7 +11,7 @@ void visu_string_concat() {
     char str[2][MAX_STRING_LENGTH] = {"HELLO", "WORLD"};
 
     settextstyle(DEFAULT_FONT,HORIZ_DIR,4);
-    outtextxy(100,100,"String Concatenation");
+
 
     int x1 = INITIAL_X1;
     int x2 = INITIAL_X2;
@@ -29,6 +29,8 @@ int drawString(int index,int x1,char *str)
 
     for(int i=index;i<strlen(str);i++)
     {
+        setcolor(WHITE);
+        outtextxy(200,100,"String Concatenation");
 
         x=x1+i*(margin+b_width);
         rectangle(x,400,x+b_width,400+b_height);

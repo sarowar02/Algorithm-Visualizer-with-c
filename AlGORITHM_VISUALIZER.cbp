@@ -83,6 +83,9 @@
 		<Unit filename="string.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="substring.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -124,13 +124,13 @@
 	<limits.h>
 	<sstream>
 
-1693568027 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\bfs.c
+1695286241 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\bfs.c
 	"algo_visualizer.h"
 	<stdbool.h>
 	<stdio.h>
 	<stdlib.h>
 
-1694784373 c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\algo_visualizer.h
+1695286017 c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\algo_visualizer.h
 	<graphics.h>
 	<stdio.h>
 	<time.h>
@@ -144,7 +144,7 @@
 1694785237 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\linearsearch.c
 	"algo_visualizer.h"
 
-1694784672 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\main.c
+1695286577 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\main.c
 	"algo_visualizer.h"
 	"stack.c"
 	"queue.c"
@@ -167,9 +167,12 @@
 	"algo_visualizer.h"
 	<stdbool.h>
 
-1694585790 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\string.c
+1695300553 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\string.c
 	"algo_visualizer.h"
 
 1694783900 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\selection_sort.c
+	"algo_visualizer.h"
+
+1695300249 source:c:\users\user\desktop\new folder\c projects\algorithm-visualizer-with-c\substring.c
 	"algo_visualizer.h"
 

@@ -46,5 +46,6 @@ void stringHashing();
 void palindrome();
 void drawPalindrome(int l,int r,int row,char *str);
 void selection_sort();
+void substrVis();
 void draw_selection_array(int *arr,int *visited,int n,int highlight_ind,int color);
 #endif // ALGO_VISUALIZER_H_INCLUDED

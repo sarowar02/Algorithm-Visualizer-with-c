@@ -487,7 +487,7 @@ if((x>=330 && x<=680) && (y>=500 && y<=630))//STRING OPERATION
 
                 settextstyle(SMALL_FONT,HORIZ_DIR,9);
                 rectangle(320,130+y_margin,670,230+y_margin);
-                outtextxy(350,165+y_margin,"Concatenation");
+                outtextxy(350,165+y_margin,"Substring Checking");
                 setfillstyle(SOLID_FILL,GREEN);
                 floodfill(325,135+y_margin,WHITE);
 
@@ -501,6 +501,11 @@ if((x>=330 && x<=680) && (y>=500 && y<=630))//STRING OPERATION
                 setfillstyle(SOLID_FILL,GREEN);
                 floodfill(325,375+y_margin,WHITE);
 
+                rectangle(320,490+y_margin,670,590+y_margin);
+                outtextxy(350,505+y_margin,"Concatenation");
+                setfillstyle(SOLID_FILL,GREEN);
+                floodfill(325,495+y_margin,WHITE);
+
 
                 while(!ismouseclick(WM_LBUTTONDOWN));
                 getmouseclick(WM_LBUTTONDOWN,x,y);
@@ -509,12 +514,9 @@ if((x>=330 && x<=680) && (y>=500 && y<=630))//STRING OPERATION
                 {
                     setbkcolor(BLACK);
                     cleardevice();
-
-                    visu_string_concat();
+                    substrVis();
 
                     getch();
-
-
 
 
                 }
@@ -535,6 +537,17 @@ if((x>=330 && x<=680) && (y>=500 && y<=630))//STRING OPERATION
                             setbkcolor(BLACK);
                           cleardevice();
                           palindrome();
+                          getch();
+
+
+                        }
+                else if((x>=320 && x<=670) && (y>=540 && y<=640))//STRING CONCATENATION
+                        {
+
+
+                            setbkcolor(BLACK);
+                          cleardevice();
+                          visu_string_concat();
                           getch();
 
 

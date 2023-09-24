@@ -19,7 +19,7 @@ void draw_bfs_Graph(struct Point *nodes,int numNodes,int edges[][2],int numEdges
         int x1 = nodes[nodeA].x;
         int y1 = nodes[nodeA].y;
         int x2 = nodes[nodeB].x;
-        int y2 = nodes[nodeB].y;s
+        int y2 = nodes[nodeB].y;
 
         line(x1, y1, x2, y2);
     }
